@@ -29,3 +29,5 @@
 |인스턴스(instance)|외연(extension)|데이터(data)|
 |튜플(tuple)|행(row)|레코드(record)|
 |속성(attribute)|열(column)|필드(field)|
+
+<img src="miniproject_RESTAURANT.png">
