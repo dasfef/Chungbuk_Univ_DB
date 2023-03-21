@@ -39,71 +39,101 @@ drop table review; */
 
 
 INSERT INTO Restaurant (restId, restName, address, phone, openHours, restRating)
-select 1, '·Ôµ¥¸®¾Æ', '¼­¿ïÆ¯º°½Ã °­³²±¸ µµ»ê´ë·Î 95±æ 20', '02-1234-5678', '10:00 - 22:00', 5 from dual union all
-select 2, '¸Æµµ³¯µå', 'ºÎ»ê±¤¿ª½Ã ÇØ¿î´ë±¸ ÇØ¿î´ëÇØº¯·Î 280', '051-9876-5432', '11:00 - 23:00', 3 from dual union all
-select 3, '¹ö°ÅÅ·', '´ë±¸±¤¿ª½Ã ¼ö¼º±¸ ¼ö¼º·Î 45±æ 8', '053-4567-1234', '09:00 - 21:00', 4 from dual union all
-select 4, '¸¾½ºÅÍÄ¡', 'ÀÎÃµ±¤¿ª½Ã ¿¬¼ö±¸ ÄÁº¥½Ã¾Æ´ë·Î 123', '032-7890-1234', '11:00 - 23:00', 4 from dual;
+select 1, 'ë¡¯ë°ë¦¬ì•„', 'ì„œìš¸íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬ ë„ì‚°ëŒ€ë¡œ 95ê¸¸ 20', '02-1234-5678', '10:00 - 22:00', 5 from dual union all
+select 2, 'ë§¥ë„ë‚ ë“œ', 'ë¶€ì‚°ê´‘ì—­ì‹œ í•´ìš´ëŒ€êµ¬ í•´ìš´ëŒ€í•´ë³€ë¡œ 280', '051-9876-5432', '11:00 - 23:00', 3 from dual union all
+select 3, 'ë²„ê±°í‚¹', 'ëŒ€êµ¬ê´‘ì—­ì‹œ ìˆ˜ì„±êµ¬ ìˆ˜ì„±ë¡œ 45ê¸¸ 8', '053-4567-1234', '09:00 - 21:00', 4 from dual union all
+select 4, 'ë§˜ìŠ¤í„°ì¹˜', 'ì¸ì²œê´‘ì—­ì‹œ ì—°ìˆ˜êµ¬ ì»¨ë²¤ì‹œì•„ëŒ€ë¡œ 123', '032-7890-1234', '11:00 - 23:00', 4 from dual;
 
 INSERT INTO Menu (menuId, restId, menuName, describe, price)
-select 1, 1, 'ºÒ°í±â¹ö°Å', 'ÇÑ±¹ ÀüÅëÀÇ ºÒ°í±â ¸À ÇÜ¹ö°Å.', 4500 from dual union all
-select 2, 1, '»õ¿ì¹ö°Å', '´ç½ÅµéÀÌ »õ¿ì ¸ÀÀ» ¾Æ´Â°¡.', 4500 from dual union all
-select 3, 2, 'ºò¸Æ', 'ºò¸ÆÁö¼öÀÇ ±× ºò¸Æ.', 5200 from dual union all
-select 4, 2, '¸ÆÄ¡Å²', '¸ÆÄ¡Å²ÀÌÁö¸¸ »ç½Ç ÇÜ¹ö°Å´Ù.', 3500 from dual union all
-select 5, 3, '¿ÍÆÛ', 'ºÒ¸À³ª´Â ÇÜ¹ö°Å.', 6900 from dual union all
-select 6, 3, 'Å·Ä¡Å²¹ö°Å', '¹ö°ÅÅ· ÃÖ¾àÃ¼.', 3600 from dual union all
-select 7, 4, '½ÎÀÌ¹ö°Å', '¿ùµå½ºÅ¸ ½ÎÀÌ¿Í ¿¬°ü ¾ø´Ù.', 4300 from dual union all
-select 8, 4, 'È­ÀÌÆ®°¥¸¯¹ö°Å', 'ÈûÀ» ¼û±ä ÇÜ¹ö°Å.', 4600 from dual;
+select 1, 1, 'ë¶ˆê³ ê¸°ë²„ê±°', 'í•œêµ­ ì „í†µì˜ ë¶ˆê³ ê¸° ë§› í–„ë²„ê±°.', 4500 from dual union all
+select 2, 1, 'ìƒˆìš°ë²„ê±°', 'ë‹¹ì‹ ë“¤ì´ ìƒˆìš° ë§›ì„ ì•„ëŠ”ê°€.', 4500 from dual union all
+select 3, 2, 'ë¹…ë§¥', 'ë¹…ë§¥ì§€ìˆ˜ì˜ ê·¸ ë¹…ë§¥.', 5200 from dual union all
+select 4, 2, 'ë§¥ì¹˜í‚¨', 'ë§¥ì¹˜í‚¨ì´ì§€ë§Œ ì‚¬ì‹¤ í–„ë²„ê±°ë‹¤.', 3500 from dual union all
+select 5, 3, 'ì™€í¼', 'ë¶ˆë§›ë‚˜ëŠ” í–„ë²„ê±°.', 6900 from dual union all
+select 6, 3, 'í‚¹ì¹˜í‚¨ë²„ê±°', 'ë²„ê±°í‚¹ ìµœì•½ì²´.', 3600 from dual union all
+select 7, 4, 'ì‹¸ì´ë²„ê±°', 'ì›”ë“œìŠ¤íƒ€ ì‹¸ì´ì™€ ì—°ê´€ ì—†ë‹¤.', 4300 from dual union all
+select 8, 4, 'í™”ì´íŠ¸ê°ˆë¦­ë²„ê±°', 'í˜ì„ ìˆ¨ê¸´ í–„ë²„ê±°.', 4600 from dual;
 
 /*alter table menu drop column orderer;*/
 
 INSERT INTO Review (reviewId, restId, menuid, orderer, r_text, reviewRating, wrottendate)
-select 1, 1, 1, 'ÀÌµ¿¹¬', 'ÀÌ ÇÜ¹ö°ÅÀÇ À°ÁóÀÌ ³ÑÄ¡°í, ¼Ò½ºµµ ¿Ïº®ÇÏ°Ô ¾î¿ì·¯Á® ÀÖ¾î¿ä!', 1, '2023-02-15' from dual union all
-select 2, 1, 2, 'ÃÖ¿¬¿õ', 'ÇÜ¹ö°Å°¡ Å©°í µçµçÇØ¼­ ¹èºÎ¸£°Ô ¸ÔÀ» ¼ö ÀÖ¾î ÁÁ¾Ò½À´Ï´Ù.', 3, '2023-01-28' from dual union all
-select 3, 4, 7, '±¹À¯Ã¤', 'ÇÜ¹ö°Å°¡ Â¥¿ä.', 1, '2023-02-20' from dual union all
-select 4, 4, 8, 'Àª ½º¹Ì½º', '½Å¼±ÇÑ ¾ßÃ¤¿Í ¹Ù»èÇÑ Æ¢±èÀÌ ¾î¿ì·¯Áø ÇÜ¹ö°Å°¡ ÀÎ»óÀûÀÌ¾ú½À´Ï´Ù.', 2, '2023-03-05' from dual union all
-select 5, 3, 5, 'µµ³Îµå Æ®·³ÇÁ', 'ÇÜ¹ö°Å »§ÀÌ ºÎµå·´°í ´ã¹éÇÑ ¸ÀÀÌ ÁÁ¾Ò¾î¿ä.', 4, '2023-01-10' from dual union all
-select 6, 3, 5, 'ÀÌµ¿¹¬', '½ºÆÄÀÌ½ÃÇÑ ¼Ò½º°¡ µé¾î°£ ÇÜ¹ö°Å·Î, ¸ÅÄŞÇÑ ¸ÀÀ» ÁÁ¾ÆÇÏ´Â »ç¶÷µé¿¡°Ô ÃßÃµÇÕ´Ï´Ù.', 1, '2023-03-12' from dual union all
-select 7, 2, 4, 'ÀÌµ¿¹¬', '½ºÆÄ°ÔÆ¼°¡ Âü ¸ÀÀÖ¾î¿ä ¸ÅÄŞ´Ş´ŞÇØ¼­ °³ÀÎÀûÀ¸·Î ¸¸Á·ÇÕ´Ï´Ù.', 4,'2023-03-21' from dual union all
-select 8, 4, 7, '±¹À¯Ã¤', '¸ÅÀåÀÌ ´õ·¯¿ö¿ä', 2,'2023-02-20' from dual union all
-select 9, 4, 7, '±¹À¯Ã¤', '¾Ë¹Ù°¡ ³ë·ÁºÁ¿ä', 1,'2023-01-20' from dual union all
-select 10, 4, 7, 'ÃÖ¿¬¿õ', '¹»·Î ¸¸µé¾ú´ÂÁö ¸ğ¸£°Ú¾î¿ä', 1,'2023-03-11' from dual union all
-select 11, 2, 4, 'ÃÖ¿¬¿õ', 'ÀÌ ÇÜ¹ö°Å´Â °í±â¿Í ¾ßÃ¤ÀÇ ±ÕÇüÀÌ Àß ¸Â¾Æ, ±ò²ûÇÑ ¸ÀÀ» Áñ±æ ¼ö ÀÖ¾ú½À´Ï´Ù.', 1, '2023-02-05' from dual;
+select 1, 1, 1, 'ì´ë™ë¬µ', 'ì´ í–„ë²„ê±°ì˜ ìœ¡ì¦™ì´ ë„˜ì¹˜ê³ , ì†ŒìŠ¤ë„ ì™„ë²½í•˜ê²Œ ì–´ìš°ëŸ¬ì ¸ ìˆì–´ìš”!', 1, '2023-02-15' from dual union all
+select 2, 1, 2, 'ìµœì—°ì›…', 'í–„ë²„ê±°ê°€ í¬ê³  ë“ ë“ í•´ì„œ ë°°ë¶€ë¥´ê²Œ ë¨¹ì„ ìˆ˜ ìˆì–´ ì¢‹ì•˜ìŠµë‹ˆë‹¤.', 3, '2023-01-28' from dual union all
+select 3, 4, 7, 'êµ­ìœ ì±„', 'í–„ë²„ê±°ê°€ ì§œìš”.', 1, '2023-02-20' from dual union all
+select 4, 4, 8, 'ìœŒ ìŠ¤ë¯¸ìŠ¤', 'ì‹ ì„ í•œ ì•¼ì±„ì™€ ë°”ì‚­í•œ íŠ€ê¹€ì´ ì–´ìš°ëŸ¬ì§„ í–„ë²„ê±°ê°€ ì¸ìƒì ì´ì—ˆìŠµë‹ˆë‹¤.', 2, '2023-03-05' from dual union all
+select 5, 3, 5, 'ë„ë„ë“œ íŠ¸ëŸ¼í”„', 'í–„ë²„ê±° ë¹µì´ ë¶€ë“œëŸ½ê³  ë‹´ë°±í•œ ë§›ì´ ì¢‹ì•˜ì–´ìš”.', 4, '2023-01-10' from dual union all
+select 6, 3, 5, 'ì´ë™ë¬µ', 'ìŠ¤íŒŒì´ì‹œí•œ ì†ŒìŠ¤ê°€ ë“¤ì–´ê°„ í–„ë²„ê±°ë¡œ, ë§¤ì½¤í•œ ë§›ì„ ì¢‹ì•„í•˜ëŠ” ì‚¬ëŒë“¤ì—ê²Œ ì¶”ì²œí•©ë‹ˆë‹¤.', 1, '2023-03-12' from dual union all
+select 7, 2, 4, 'ì´ë™ë¬µ', 'ìŠ¤íŒŒê²Œí‹°ê°€ ì°¸ ë§›ìˆì–´ìš” ë§¤ì½¤ë‹¬ë‹¬í•´ì„œ ê°œì¸ì ìœ¼ë¡œ ë§Œì¡±í•©ë‹ˆë‹¤.', 4,'2023-03-21' from dual union all
+select 8, 4, 7, 'êµ­ìœ ì±„', 'ë§¤ì¥ì´ ë”ëŸ¬ì›Œìš”', 2,'2023-02-20' from dual union all
+select 9, 4, 7, 'êµ­ìœ ì±„', 'ì•Œë°”ê°€ ë…¸ë ¤ë´ìš”', 1,'2023-01-20' from dual union all
+select 10, 4, 7, 'ìµœì—°ì›…', 'ë­˜ë¡œ ë§Œë“¤ì—ˆëŠ”ì§€ ëª¨ë¥´ê² ì–´ìš”', 1,'2023-03-11' from dual union all
+select 11, 2, 4, 'ìµœì—°ì›…', 'ì´ í–„ë²„ê±°ëŠ” ê³ ê¸°ì™€ ì•¼ì±„ì˜ ê· í˜•ì´ ì˜ ë§ì•„, ê¹”ë”í•œ ë§›ì„ ì¦ê¸¸ ìˆ˜ ìˆì—ˆìŠµë‹ˆë‹¤.', 1, '2023-02-05' from dual;
 
 
---1 µî·ÏµÈ Á¡Æ÷¸¦ º°Á¡¼øÀ¸·Î ¸ğµÎ Ãâ·Â
+--1 ë“±ë¡ëœ ì í¬ë¥¼ ë³„ì ìˆœìœ¼ë¡œ ëª¨ë‘ ì¶œë ¥
 SELECT *
 FROM Restaurant
-ORDER BY restRating;
+ORDER BY restRating desc;
 
---2 ¸Ş´º ¸±·¹ÀÌ¼Ç¿¡¼­ °¡°İÀÌ 4500ÀÌ»ó 5500¹Ì¸¸ÀÎ ¸Ş´º¸¦ Ãâ·Â
+--2 ë©”ë‰´ ë¦´ë ˆì´ì…˜ì—ì„œ ê°€ê²©ì´ 4500ì´ìƒ 5500ë¯¸ë§Œì¸ ë©”ë‰´ë¥¼ ì¶œë ¥
 SELECT *
 FROM Menu
 WHERE price >= 4500 and price <5500;
 
---3 ¸®ºä¸¦ ³¯Â¥¼øÀ¸·Î ÀüÃ¼ Ãâ·Â
+--3 ë¦¬ë·°ë¥¼ ë‚ ì§œìˆœìœ¼ë¡œ ì „ì²´ ì¶œë ¥
 SELECT *
 FROM Review
 ORDER BY wrottendate;
 
---4 º°Á¡4Á¡ ÀÌ»óÀÎ ·¹½ºÅä¶û°ú º°Á¡À» Ãâ·Â
+--4 ë³„ì 4ì  ì´ìƒì¸ ë ˆìŠ¤í† ë‘ê³¼ ë³„ì ì„ ì¶œë ¥
 SELECT restName, restRating
 FROM Restaurant
 WHERE restRating >= 4;
 
 
---5 ¸Ş´º ÀÌ¸§¿¡ 'Ä¡Å²'ÀÌ µé¾î°£ ¸Ş´ºÀÇ Á¦Ç°ÀÌ¸§, Á¦Ç°°¡°İÀ» Ãâ·Â 
+--5 ë©”ë‰´ ì´ë¦„ì— 'ì¹˜í‚¨'ì´ ë“¤ì–´ê°„ ë©”ë‰´ì˜ ì œí’ˆì´ë¦„, ì œí’ˆê°€ê²©ì„ ì¶œë ¥ 
 SELECT menuName, price
 FROM Menu
-WHERE Menuname LIKE '%Ä¡Å²%'
+WHERE Menuname LIKE '%ì¹˜í‚¨%'
 ORDER BY price;
 
---6 ¼ÒºñÀÚ ÆòÁ¡ 3Á¡ ÀÌ»óÀÎ ¸®ºä ³»¿ëÀ» º°Á¡¼øÀ¸·Î Ãâ·Â
+--6 ì†Œë¹„ì í‰ì  3ì  ì´ìƒì¸ ë¦¬ë·° ë‚´ìš©ì„ ë³„ì ìˆœìœ¼ë¡œ ì¶œë ¥
 SELECT reviewRating, r_text
 FROM Review
 WHERE reviewRating >= 3
 ORDER BY reviewRating;
 
---7 ¼­¿ïÁö¿ªÀÌ ¾Æ´Ñ ·¹½ºÅä¶û°ú ¿µ¾÷½Ã°£À» Ãâ·Â
+--7 ì„œìš¸ì§€ì—­ì´ ì•„ë‹Œ ë ˆìŠ¤í† ë‘ê³¼ ì˜ì—…ì‹œê°„ì„ ì¶œë ¥
 SELECT restName, openHours 
 FROM Restaurant
-WHERE address not like '¼­¿ï%';
+WHERE address not like 'ì„œìš¸%';
+
+--8 ê° ë ˆìŠ¤í† ë‘ì˜ ë©”ë‰´, ë©”ë‰´ë³„ ì„¤ëª…ìƒì„¸ì™€ ê°€ê²©ì„ ì¶œë ¥
+SELECT  restName ë ˆìŠ¤í† ë‘ëª…, Menuname ë©”ë‰´ì´ë¦„, Describe ë©”ë‰´ìƒì„¸, price ê°€ê²©
+FROM Restaurant,Menu
+WHERE Restaurant.restid = Menu.restid
+ORDER BY Restaurant.restid;
+
+--9 ì‹¸ì´ë²„ê±°ì— ëŒ€í•œ í‰ê°€ë‚´ìš©ë§Œ ëª¨ì•„ì„œ ì„¸ ê±´ë§Œ ë³¼ ìˆ˜ ìˆê²Œ
+SELECT orderer ì£¼ë¬¸ì, reviewRating ë³„ì  , r_text í‰ê°€ë‚´ìš©
+FROM (select * from Review where menuid=(SELECT menuid from menu where menuname = 'ì‹¸ì´ë²„ê±°' ) 
+order by reviewRating DESC) 
+WHERE ROWNUM <=3;
+
+--10 ì£¼ë¬¸ì ì´ë™ë¬µì˜ ë¦¬ë·°ë§Œ ëª¨ì•„ë³´ê¸°
+SELECT reviewRating í‰ì , r_text ë¦¬ë·°ë‚´ìš©
+FROM Review
+WHERE orderer = 'ì´ë™ë¬µ'
+ORDER BY reviewRating;
+
+--11 ë¶ˆê³ ê¸°ë²„ê±°ì˜ ë©”ë‰´ ìƒì„¸ì„¤ëª…, ê°€ê²©ì •ë³´ë¥¼ ë³´ê³ ì‹¶ë‹¤.
+SELECT Menuname ë©”ë‰´ëª…, describe ìƒì„¸ì„¤ëª…
+FROM Menu
+WHERE menuName = 'ë¶ˆê³ ê¸°ë²„ê±°';
+
+--12 êµ­ìœ ì±„ì”¨ì˜ ì´ ì£¼ë¬¸ì•¡
+SELECT orderer ì£¼ë¬¸ì, sum(price) ì´ì£¼ë¬¸ì•¡
+FROM  menu, review
+WHERE menu.menuid = review.menuid
+GROUP BY orderer
+HAVING orderer = 'êµ­ìœ ì±„';
